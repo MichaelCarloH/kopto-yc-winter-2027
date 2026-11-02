@@ -1,0 +1,272 @@
+:root {
+  --ink: #1a1a1a;
+  --paper: #ffffff;
+  --muted: #6e6e6e;
+  --line: #d9d9d9;
+  --orange: #fb651e;
+  --orange-deep: #c24b00;
+  --error: #a22514;
+  --success: #17613d;
+  font-family: "Helvetica Neue", Arial, sans-serif;
+  color: var(--ink);
+  background: var(--paper);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background:
+    linear-gradient(90deg, transparent 0 65%, rgba(251, 101, 30, 0.035) 65%),
+    var(--paper);
+}
+
+button,
+input {
+  font: inherit;
+}
+
+.shell {
+  width: min(1180px, calc(100% - 48px));
+  min-height: 100vh;
+  margin: 0 auto;
+  padding: 34px 0 28px;
+  display: flex;
+  flex-direction: column;
+}
+
+.masthead {
+  display: flex;
+  justify-content: space-between;
+  gap: 24px;
+  padding-bottom: 18px;
+  border-bottom: 1px solid var(--line);
+  font-family: "Courier New", monospace;
+  font-size: 14px;
+  letter-spacing: 0.08em;
+}
+
+.brand {
+  font-family: Georgia, serif;
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+}
+
+.context {
+  color: var(--muted);
+}
+
+.hero {
+  max-width: 900px;
+  margin-top: 12vh;
+}
+
+.kicker,
+.doc-type {
+  margin: 0 0 18px;
+  color: var(--orange-deep);
+  font-family: "Courier New", monospace;
+  font-size: 14px;
+  letter-spacing: 0.1em;
+}
+
+h1 {
+  margin: 0;
+  max-width: 780px;
+  font-size: clamp(54px, 8vw, 96px);
+  line-height: 0.94;
+  letter-spacing: -0.055em;
+}
+
+.lead {
+  max-width: 690px;
+  margin: 28px 0 0;
+  color: var(--muted);
+  font-size: 24px;
+  line-height: 1.4;
+}
+
+.unlock-form {
+  width: min(760px, 100%);
+  margin-top: 54px;
+}
+
+.unlock-form label {
+  display: block;
+  margin-bottom: 10px;
+  font-family: "Courier New", monospace;
+  font-size: 14px;
+  letter-spacing: 0.08em;
+}
+
+.password-row {
+  display: grid;
+  grid-template-columns: 1fr auto;
+}
+
+.password-row input {
+  min-width: 0;
+  height: 58px;
+  padding: 0 18px;
+  border: 1px solid var(--ink);
+  border-right: 0;
+  border-radius: 0;
+  background: var(--paper);
+  font-size: 20px;
+}
+
+.password-row input:focus {
+  outline: 3px solid rgba(251, 101, 30, 0.28);
+  outline-offset: 2px;
+}
+
+.password-row button {
+  min-width: 190px;
+  padding: 0 22px;
+  border: 1px solid var(--orange);
+  background: var(--orange);
+  color: var(--ink);
+  cursor: pointer;
+  font-weight: 700;
+}
+
+.password-row button:hover,
+.password-row button:focus-visible {
+  background: #ff7a3d;
+}
+
+.password-row button:disabled {
+  cursor: wait;
+  opacity: 0.65;
+}
+
+.status {
+  min-height: 24px;
+  margin: 12px 0 0;
+  color: var(--muted);
+  font-family: "Courier New", monospace;
+  font-size: 14px;
+  line-height: 1.45;
+}
+
+.status.error {
+  color: var(--error);
+}
+
+.status.success {
+  color: var(--success);
+}
+
+.materials {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 22px;
+  margin-top: 48px;
+}
+
+.document-card {
+  display: flex;
+  min-height: 240px;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 30px;
+  padding: 28px;
+  border: 1px solid var(--line);
+}
+
+.document-card h2 {
+  margin: 0;
+  font-size: 30px;
+  line-height: 1.1;
+  letter-spacing: -0.035em;
+}
+
+.document-card p:not(.doc-type) {
+  margin: 14px 0 0;
+  color: var(--muted);
+  font-size: 17px;
+  line-height: 1.45;
+}
+
+.actions {
+  display: flex;
+  gap: 12px;
+}
+
+.actions a {
+  padding: 11px 14px;
+  border: 1px solid var(--ink);
+  color: var(--ink);
+  text-decoration: none;
+  font-family: "Courier New", monospace;
+  font-size: 14px;
+}
+
+.actions a:first-child {
+  border-color: var(--orange);
+  background: var(--orange);
+}
+
+.actions a:hover,
+.actions a:focus-visible {
+  text-decoration: underline;
+}
+
+footer {
+  display: flex;
+  justify-content: space-between;
+  gap: 24px;
+  margin-top: auto;
+  padding-top: 28px;
+  border-top: 1px solid var(--line);
+  color: var(--muted);
+  font-family: "Courier New", monospace;
+  font-size: 13px;
+  line-height: 1.4;
+}
+
+[hidden] {
+  display: none !important;
+}
+
+@media (max-width: 760px) {
+  .shell {
+    width: min(100% - 28px, 1180px);
+    padding-top: 22px;
+  }
+
+  .masthead,
+  footer {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .hero {
+    margin-top: 72px;
+  }
+
+  .lead {
+    font-size: 20px;
+  }
+
+  .password-row {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .password-row input {
+    border-right: 1px solid var(--ink);
+  }
+
+  .password-row button {
+    height: 54px;
+  }
+
+  .materials {
+    grid-template-columns: 1fr;
+  }
+}

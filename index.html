@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="noindex, nofollow" />
+    <title>Kopto — Private YC Materials</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <main class="shell">
+      <header class="masthead">
+        <span class="brand">KOPTO</span>
+        <span class="context">YC WINTER 2027 · PRIVATE MATERIALS</span>
+      </header>
+
+      <section class="hero" aria-labelledby="page-title">
+        <p class="kicker">ACCESS REQUIRED</p>
+        <h1 id="page-title">Private investor materials.</h1>
+        <p class="lead">
+          Enter the access password to decrypt and open the YC deck and research
+          paper in this browser.
+        </p>
+      </section>
+
+      <form id="unlock-form" class="unlock-form">
+        <label for="password">Access password</label>
+        <div class="password-row">
+          <input
+            id="password"
+            name="password"
+            type="password"
+            autocomplete="current-password"
+            required
+            autofocus
+          />
+          <button type="submit">Unlock materials</button>
+        </div>
+        <p id="status" class="status" role="status" aria-live="polite">
+          Files are encrypted at rest. Nothing is sent to a server.
+        </p>
+      </form>
+
+      <section id="materials" class="materials" hidden aria-live="polite">
+        <article class="document-card">
+          <div>
+            <p class="doc-type">INVESTOR DECK · PDF</p>
+            <h2>YC Winter 2027 deck</h2>
+            <p>Ten-slide investor presentation with current progress and economics.</p>
+          </div>
+          <div class="actions">
+            <a id="deck-open" target="_blank" rel="noopener">Open deck</a>
+            <a id="deck-download" download>Download</a>
+          </div>
+        </article>
+
+        <article class="document-card">
+          <div>
+            <p class="doc-type">RESEARCH PAPER · PDF</p>
+            <h2>Research and technology paper</h2>
+            <p>Evidence, market-making architecture, validation gates and business plan.</p>
+          </div>
+          <div class="actions">
+            <a id="paper-open" target="_blank" rel="noopener">Open paper</a>
+            <a id="paper-download" download>Download</a>
+          </div>
+        </article>
+      </section>
+
+      <footer>
+        <span>Encrypted with AES-256-GCM and PBKDF2-SHA-256.</span>
+        <span>No password or document plaintext is stored in this repository.</span>
+      </footer>
+    </main>
+    <script type="module" src="./app.js"></script>
+  </body>
+</html>
