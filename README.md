@@ -1,8 +1,8 @@
-# Kopto YC Winter 2027 — Private Materials Portal
+# Kopto YC Winter 2027 — Paper Download
 
-Password-gated access to the YC deck and research paper.
+Password-gated download for the YC Winter 2027 research paper.
 
-The repository contains no plaintext PDFs. Each document is encrypted with
+The repository contains no plaintext PDF. The paper is encrypted with
 AES-256-GCM using a key derived from the access password with PBKDF2-SHA-256
 and 310,000 iterations. Decryption happens locally in the browser; the
 password is never sent to a server.

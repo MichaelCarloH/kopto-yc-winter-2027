@@ -17,13 +17,6 @@ const iterations = 310000;
 const documents = [
   {
     input: path.resolve(
-      process.env.DECK_PDF ??
-        "../quant_minds/paper/presentation/yc-winter-2027/output/KOPTO_YC_Winter_2027.pdf",
-    ),
-    output: path.join(outDir, "kopto-yc-winter-2027-deck.kopto"),
-  },
-  {
-    input: path.resolve(
       process.env.PAPER_PDF ??
         "../yc-winter-2027/paper/Kopto_YC_Winter_2027_Research_Technology.pdf",
     ),

@@ -1,10 +1,6 @@
 const ITERATIONS = 310000;
 const MAGIC = new TextEncoder().encode("KOPTO01\n");
 const FILES = {
-  deck: {
-    encrypted: "./assets/kopto-yc-winter-2027-deck.kopto",
-    filename: "KOPTO_YC_Winter_2027.pdf",
-  },
   paper: {
     encrypted: "./assets/kopto-yc-winter-2027-paper.kopto",
     filename: "Kopto_YC_Winter_2027_Research_Technology.pdf",
@@ -93,13 +89,9 @@ form.addEventListener("submit", async (event) => {
 
   try {
     const password = passwordInput.value;
-    const [deck, paper] = await Promise.all([
-      decryptFile(FILES.deck, password),
-      decryptFile(FILES.paper, password),
-    ]);
+    const paper = await decryptFile(FILES.paper, password);
 
     objectUrls.splice(0).forEach((url) => URL.revokeObjectURL(url));
-    connect(deck, FILES.deck.filename, "deck");
     connect(paper, FILES.paper.filename, "paper");
     materials.hidden = false;
     passwordInput.value = "";

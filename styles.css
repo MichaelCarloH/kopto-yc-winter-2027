@@ -39,25 +39,15 @@ input {
 }
 
 .masthead {
-  display: flex;
-  justify-content: space-between;
-  gap: 24px;
   padding-bottom: 18px;
   border-bottom: 1px solid var(--line);
-  font-family: "Courier New", monospace;
-  font-size: 14px;
-  letter-spacing: 0.08em;
 }
 
-.brand {
-  font-family: Georgia, serif;
-  font-size: 18px;
-  font-weight: 700;
-  letter-spacing: 0.18em;
-}
-
-.context {
-  color: var(--muted);
+.brand-mark {
+  display: block;
+  width: 58px;
+  height: 58px;
+  object-fit: contain;
 }
 
 .hero {
@@ -80,14 +70,6 @@ h1 {
   font-size: clamp(54px, 8vw, 96px);
   line-height: 0.94;
   letter-spacing: -0.055em;
-}
-
-.lead {
-  max-width: 690px;
-  margin: 28px 0 0;
-  color: var(--muted);
-  font-size: 24px;
-  line-height: 1.4;
 }
 
 .unlock-form {
@@ -162,15 +144,14 @@ h1 {
 }
 
 .materials {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 22px;
+  display: block;
   margin-top: 48px;
 }
 
 .document-card {
   display: flex;
-  min-height: 240px;
+  max-width: 760px;
+  min-height: 230px;
   flex-direction: column;
   justify-content: space-between;
   gap: 30px;
@@ -218,8 +199,7 @@ h1 {
 
 footer {
   display: flex;
-  justify-content: space-between;
-  gap: 24px;
+  justify-content: flex-start;
   margin-top: auto;
   padding-top: 28px;
   border-top: 1px solid var(--line);
